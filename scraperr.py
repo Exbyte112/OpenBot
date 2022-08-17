@@ -216,7 +216,7 @@ async def src(ctx, *reply):
     for i in reply:
         an+= i+" "
     ans = str(an)
-    app_id = 'R85747-LQL87PK7J7'
+    app_id = 'YOUR WOLFRAM TOKEN'
     client = Client(app_id)
     res = client.query(ans)
     fin = next(res.results).text
@@ -264,5 +264,5 @@ async def udt(ctx, *reply):
             break
 
 
-client.run("OTQzMTMwNDY1Mjg2NjQ3ODI5.GeiEgk.DS3K7_weUeiShk0RPOiYQg9xQq89oyPOFuSyJA")
+client.run("YOUR BOT TOKEN")
 
