@@ -266,3 +266,5 @@ async def udt(ctx, *reply):
 
 client.run("YOUR BOT TOKEN")
 
+# Get rid of the unnecessary tips in the embeds
+# send all your seggestions to the bot's server
