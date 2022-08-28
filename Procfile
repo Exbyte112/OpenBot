@@ -1,2 +1,3 @@
-heroku ps:scale worker=2
+
+heroku ps:scale worker=1
 worker: python scraperr.py

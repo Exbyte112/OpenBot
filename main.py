@@ -21,7 +21,28 @@ from googletrans import Translator
 import wolframalpha
 from wolframalpha import *
 
-client = commands.Bot(command_prefix=["uku ", "Uku ", "!"], help_command=None, case_insensitive=True)
+#==============================================================
+#CUSTOM VALUES
+
+#==============================================================
+
+#insert your own command prefix here
+command_prefix = ""
+
+#insert your own bot token here from the bot developer page(https://discordapp.com/developers/applications/)
+bot_token = ""
+
+#insert your own bot invite link here
+bot_invite = ""
+
+#insert your own custom bot name here
+bot_name = ""
+
+#insert your wolframalpha app id here
+wolframalpha_app_id = ""
+
+#==============================================================
+client = commands.Bot(command_prefix=[command_prefix], help_command=None, case_insensitive=True)
 
 testingServerID = 942495664770809856
 
@@ -80,7 +101,7 @@ async def help(ctx):
 # invite: sends an invite link to add uku to your server
 @client.command()
 async def invite(ctx):
-    linkk = "https://github.com/Exbyte112/add-uku/tree/main"
+    linkk = "bot_invite"
     await ctx.send(linkk)
     #await ctx.send("If you want to add uku to your server, click the link or scan the QR code below")
     #await ctx.send (file=nextcord.File("ukuqr.png"))
@@ -130,8 +151,8 @@ async def qr(ctx, *reply):
         an+= i+" "
     ans = str(an)
     qr = pyqrcode.create(ans)
-    qr.png('QR_by_ukubot.png', scale=6)
-    await ctx.send(file=nextcord.File('QR_by_ukubot.png'))
+    qr.png(f'QR_by_{bot_name}.png', scale=6)
+    await ctx.send(file=nextcord.File(f'QR_by_{bot_name}.png'))
 
 # translate: translates a word from any language to english
 @client.command()
@@ -216,7 +237,7 @@ async def src(ctx, *reply):
     for i in reply:
         an+= i+" "
     ans = str(an)
-    app_id = 'YOUR WOLFRAM TOKEN'
+    app_id = wolframalpha_app_id
     client = Client(app_id)
     res = client.query(ans)
     fin = next(res.results).text
@@ -264,7 +285,7 @@ async def udt(ctx, *reply):
             break
 
 
-client.run("YOUR BOT TOKEN")
+client.run(bot_token) #runs the bot with the token provided in the bot_token variable
 
 # Get rid of the unnecessary tips in the embeds
 # send all your seggestions to the bot's server
