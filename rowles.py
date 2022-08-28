@@ -1,6 +1,7 @@
+# The data here is used by main.py for some functions
+# =================================================
 import random
 
-#rtime = (f"{h-1}: {m}")
 #time roles
 vGMT = 0
 vECT = 1
@@ -119,6 +120,7 @@ def hlist():
 #print(hlist())
 
 # ==============================================================
+ # These are the footer tips which openbot shows in some commands with embeds, you can leave them, add or replace them with yours.
 
 def tips():
     # Tips list
